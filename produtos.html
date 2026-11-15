@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cardápio | Pizzaria Ferrata</title>
+        <link rel="stylesheet" href="estilo.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header class="cabecalho">
+            <div class="largura topo">
+                <a class="marca" href="index.html">
+                    <img src="logo-pizzaria.png" alt="Logo da pizzaria">
+                </a>
+                <button class="botao-icone botao-menu" id="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false">
+                    <img src="menu.svg">
+                </button>
+                <div class="busca">
+                    <form action="produtos.html">
+                        <img src="busca.svg">
+                        <input id="campo-busca" name="busca" type="search" maxlength="40" aria-label="Buscar produtos">
+                        <button type="submit">Buscar</button>
+                    </form>
+                </div>
+                <nav class="navegacao" id="navegacao">
+                    <a href="index.html">Início</a>
+                    <a href="produtos.html">Cardápio</a>
+                    <a href="pedidos.html">Pedidos</a>
+                    <a href="perfil.html">Perfil</a>
+                    <a href="entrar.html">Entrar</a>
+                </nav>
+                <div class="acoes">
+                    <button class="botao-icone" id="botao-tema" type="button" aria-label="Mudar tema">
+                        <img id="icone-tema" src="lua.svg">
+                    </button>
+                    <button class="botao-icone" id="botao-carrinho" type="button" aria-label="Abrir carrinho">
+                        <img src="carrinho.svg">
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="banner banner-cardapio">
+                <div class="largura titulo-pagina">
+                    <p class="rotulo">Pizzaria Ferrata</p>
+                    <h1>Cardápio</h1>
+                    <p class="descricao-pagina">Escolha a pizza que combina com o seu momento.</p>
+                </div>
+            </section>
+            <div class="largura cardapio">
+                <div class="lista-pizzas" id="lista-pizzas">
+                    <article class="produto">
+                        <img src="imagem.jpg">
+                        <div class="produto-info">
+                            <h2>Marguerita</h2>
+                            <p>Muçarela, tomate e manjericão.</p>
+                            <div class="produto-preco">
+                                <strong>R$ 49,90</strong>
+                                <button class="botao-principal botao-pedir" type="button" data-id="marguerita">Pedir</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="produto">
+                        <img src="imagem(0).jpg">
+                        <div class="produto-info">
+                            <h2>Calabresa</h2>
+                            <p>Calabresa, muçarela e cebola.</p>
+                            <div class="produto-preco">
+                                <strong>R$ 49,90</strong>
+                                <button class="botao-principal botao-pedir" type="button" data-id="calabresa">Pedir</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="produto">
+                        <img src="imagem(1).jpg">
+                        <div class="produto-info">
+                            <h2>Quatro Queijos</h2>
+                            <p>Muçarela, provolone, parmesão e catupiry.</p>
+                            <div class="produto-preco">
+                                <strong>R$ 54,90</strong>
+                                <button class="botao-principal botao-pedir" type="button" data-id="queijos">Pedir</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="produto">
+                        <img src="imagem(2).jpg">
+                        <div class="produto-info">
+                            <h2>Frango com Cebola</h2>
+                            <p>Frango, muçarela e cebola roxa.</p>
+                            <div class="produto-preco">
+                                <strong>R$ 52,90</strong>
+                                <button class="botao-principal botao-pedir" type="button" data-id="frango">Pedir</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <p class="sem-resultado" id="sem-resultado" hidden>Nenhuma pizza encontrada. Tente outro nome.</p>
+            </div>
+        </main>
+        <footer class="rodape">
+            <div class="largura rodape-info">
+                <div class="rodape-marca">
+                    <a class="marca marca-rodape" href="index.html">
+                        <img src="logo-rodape.png" alt="Logo da pizzaria">
+                    </a>
+                    <p>Pizza feita para a sua fome chegar ao fim.</p>
+                </div>
+                <div class="links-rodape">
+                    <h2>Explore</h2>
+                    <a href="produtos.html">Cardápio</a>
+                    <a href="pedidos.html">Meus pedidos</a>
+                    <a href="perfil.html">Meu perfil</a>
+                </div>
+                <div>
+                    <h2>Redes sociais</h2>
+                    <div class="redes">
+                        <img src="instagram.svg">
+                        <img src="facebook.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="largura rodape-baixo">Pizzaria Ferrata</div>
+        </footer>
+        <dialog class="modal" id="modal-carrinho">
+            <div class="topo-modal">
+                <h2>Meu carrinho</h2>
+                <button class="botao-icone fechar-modal" type="button" aria-label="Fechar carrinho">
+                    <img src="fechar.svg">
+                </button>
+            </div>
+            <div id="itens-carrinho"></div>
+            <div class="total-carrinho">
+                <span>Total</span>
+                <strong id="valor-total">R$ 0,00</strong>
+            </div>
+            <button class="botao-principal botao-largo" id="exportar-pedidos" type="button">Salvar pedido em JSON</button>
+            <p class="mensagem" id="mensagem-exportacao"></p>
+        </dialog>
+    </body>
+</html>

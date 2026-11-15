@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perfil | Pizzaria Ferrata</title>
+        <link rel="stylesheet" href="estilo.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header class="cabecalho">
+            <div class="largura topo">
+                <a class="marca" href="index.html">
+                    <img src="logo-pizzaria.png" alt="Logo da pizzaria">
+                </a>
+                <button class="botao-icone botao-menu" id="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false">
+                    <img src="menu.svg">
+                </button>
+                <div class="busca">
+                    <form action="produtos.html">
+                        <img src="busca.svg">
+                        <input id="campo-busca" name="busca" type="search" maxlength="40" aria-label="Buscar produtos">
+                        <button type="submit">Buscar</button>
+                    </form>
+                </div>
+                <nav class="navegacao" id="navegacao">
+                    <a href="index.html">Início</a>
+                    <a href="produtos.html">Cardápio</a>
+                    <a href="pedidos.html">Pedidos</a>
+                    <a href="perfil.html">Perfil</a>
+                    <a href="entrar.html">Entrar</a>
+                </nav>
+                <div class="acoes">
+                    <button class="botao-icone" id="botao-tema" type="button" aria-label="Mudar tema">
+                        <img id="icone-tema" src="lua.svg">
+                    </button>
+                    <button class="botao-icone" id="botao-carrinho" type="button" aria-label="Abrir carrinho">
+                        <img src="carrinho.svg">
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="conteudo pagina-perfil">
+            <div class="largura">
+                <div class="titulo-pagina">
+                    <p class="rotulo">Sua conta</p>
+                    <h1>Meu perfil</h1>
+                    <p class="descricao-pagina">Consulte e atualize seus dados de contato.</p>
+                </div>
+                <section class="dados-perfil">
+                    <h2>Dados pessoais</h2>
+                    <form id="form-perfil">
+                        <div class="duas-colunas">
+                            <div class="campo">
+                                <label for="perfil-nome">Nome completo</label>
+                                <input id="perfil-nome" type="text" maxlength="80" required>
+                            </div>
+                            <div class="campo">
+                                <label for="perfil-email">E-mail</label>
+                                <input id="perfil-email" type="email" maxlength="100" required>
+                            </div>
+                        </div>
+                        <div class="duas-colunas">
+                            <div class="campo">
+                                <label for="perfil-telefone">Telefone</label>
+                                <input id="perfil-telefone" type="tel" inputmode="numeric" maxlength="15" required>
+                            </div>
+                            <div class="campo">
+                                <label for="perfil-endereco">Endereço</label>
+                                <input id="perfil-endereco" type="text" maxlength="120" required>
+                            </div>
+                        </div>
+                        <button class="botao-principal" type="submit">Salvar dados</button>
+                        <p class="mensagem" id="mensagem-perfil"></p>
+                    </form>
+                </section>
+            </div>
+        </main>
+        <footer class="rodape">
+            <div class="largura rodape-info">
+                <div class="rodape-marca">
+                    <a class="marca marca-rodape" href="index.html">
+                        <img src="logo-rodape.png" alt="Logo da pizzaria">
+                    </a>
+                    <p>Pizza feita para a sua fome chegar ao fim.</p>
+                </div>
+                <div class="links-rodape">
+                    <h2>Explore</h2>
+                    <a href="produtos.html">Cardápio</a>
+                    <a href="pedidos.html">Meus pedidos</a>
+                    <a href="perfil.html">Meu perfil</a>
+                </div>
+                <div>
+                    <h2>Redes sociais</h2>
+                    <div class="redes">
+                        <img src="instagram.svg">
+                        <img src="facebook.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="largura rodape-baixo">Pizzaria Ferrata</div>
+        </footer>
+        <dialog class="modal" id="modal-carrinho">
+            <div class="topo-modal">
+                <h2>Meu carrinho</h2>
+                <button class="botao-icone fechar-modal" type="button" aria-label="Fechar carrinho">
+                    <img src="fechar.svg">
+                </button>
+            </div>
+            <div id="itens-carrinho"></div>
+            <div class="total-carrinho">
+                <span>Total</span>
+                <strong id="valor-total">R$ 0,00</strong>
+            </div>
+            <button class="botao-principal botao-largo" id="exportar-pedidos" type="button">Salvar pedido em JSON</button>
+            <p class="mensagem" id="mensagem-exportacao"></p>
+        </dialog>
+    </body>
+</html>
